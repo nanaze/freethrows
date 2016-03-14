@@ -1,16 +1,13 @@
 import randval
-import math
 
 def _CalculateProbabilityMC(variance, count):
   successful = 0
   attempted = 0
 
-  variance_sqrt = math.sqrt(variance)
-  
   for i in xrange(count):
     x, y = (
-      randval.GetRandomValueSqrtVariance(variance_sqrt),
-      randval.GetRandomValueSqrtVariance(variance_sqrt))
+      randval.GetRandomValue(variance),
+      randval.GetRandomValue(variance))
     if abs(x) <= 1 and abs(y) <= 1:
       successful += 1
     attempted += 1

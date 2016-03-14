@@ -6,10 +6,8 @@ def _CalculateGrannyMC(variance):
   successful = 0
   attempted = 0
 
-  variance_sqrt = math.sqrt(variance)
-  
   while True:
-    x = randval.GetRandomValueSqrtVariance(variance_sqrt)
+    x = randval.GetRandomValue(variance)
     if abs(x) <= 1:
       successful += 1
     attempted += 1
